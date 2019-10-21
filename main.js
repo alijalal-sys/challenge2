@@ -44,15 +44,30 @@ Create two computers object from your factory function and save them in one arra
 
 Note: please write one or two lines here describing your solution.
 */
+// first we complete the factory function which return a object with static keys, values
+// Then, we create two objects form the factory function and assign the values 
+// and then we assign those two objects to a new array called computers;
+// and then function called display computer to display one computer values, [Attributes]
 
 function makeComputer(type, color, weight) {
   // TODO: Your code here
+  return {
+    type: type,
+    color: color,
+    weight: weight
+  }
 }
+
+var computer1 = makeComputer('HP', 'black', 250);
+var computer2 = makeComputer('Dell', 'Red', 300);
+
+var computers = [computer1, computer];
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
   // TODO: Your code here
+  return obj.type + ', ' + obj.color + ', ' + obj.weight;
 }
 
 //=============================================================================
@@ -72,8 +87,16 @@ var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
+// Describtion
+// here the most helper function is map() so we use it to create a new Array and iterate
+// over the array of string and push the elements to the new array transformed to uppercase
+// just two lines of code do that
+
 function uppercaseAll(arrayOfStrings) {
   // TODO: your code here
+  return map(arrayOfStrings, function(element){
+    return element.toUpperCase();
+  });
 }
 
 //=============================================================================
@@ -111,8 +134,14 @@ var data = [
   }
 ];
 
+// Here we can use filter beacause there is a condition that we need to make sure it os true
+// so filter iterate over array and assign the elements to new Array IF the condition is true
+
 function highestPopulation(arrayOfObjects) {
   // TODO: your code here
+  return filter(arrayOfObjects, function(element, i){
+    return (element.population > 500000000);
+  });
 }
 
 //=============================================================================
@@ -130,9 +159,14 @@ halveAll(numsArray); ==> [ 1, 3, 10, 4, 7 ]
 
 Note: please write one or two lines here describing your solution.
 */
+// here we can use map function to iterate over the array
+// and assign all the elements divided by 2 to the newArray;
 
 function halveAll(numbers) {
   // your code is here
+  return map(numbers, function(element, i){
+    return (element / 2);
+  });
 }
 
 //=============================================================================
@@ -147,8 +181,15 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 
 Note: please write one or two lines here describing your solution.
 */
+//using map() we itertate over obj
+// and return just the values 
+// which is going to assign them to the new Array in map function
+
 function values(obj) {
   // TODO: your code here
+  return map(obj, function(value, key){
+    return value;
+  });
 }
 
 //Good Luck :))
